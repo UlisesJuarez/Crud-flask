@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Insertar estudiante
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    
+    <form action="{{url_for('routes.guardar_estudiante')}}" method="POST">
+        <label for="nombre">nombre</label>
+        <input type="text" name="nombre"  {% if coche %}value="{{coche.1}}" {% endif %}/>
+
+        <label for="apellidos">apellidos</label>
+        <input type="text" name="apellidos" {% if coche %}value="{{coche.2}}" {% endif %} />
+
+        <label for="email">email</label>
+        <input type="text" name="email" {% if coche %}value="{{coche.3}}" {% endif %}/>
+
+        <label for="password">password</label>
+        <input type="password" name="password"{% if coche %}value="{{coche.4}}" {% endif %}/>
+
+        <label for="edad">edad</label>
+        <input type="number" name="edad" {% if coche %}value="{{coche.3}}" {% endif %}/>
+
+        <label for="grupo">grupo</label>
+        <input type="text" name="grupo" {% if coche %}value="{{coche.3}}" {% endif %}/>
+
+        <input type="submit" value="Guardar"/>
+
+    </form>
+    {#comentario#}
+{% endblock %}

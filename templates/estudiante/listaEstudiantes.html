@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Estudiantes
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    <h1>Tabla de estudiantes</h1>
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message alert-success">{{message}}</div>
+            {% endfor %}
+        {% endif %}
+    {%endwith%}
+    {% for estudiante in estudiantes %}
+        <article class="estudiante-item">
+            <div class="data">
+                
+                <a href="">
+                    {{estudiante.1}}</a>
+                    
+                <p>{{estudiante.2}}</p>
+                <p>{{estudiante.3}}</p>
+                <p>{{estudiante.4}}</p>
+                <p>
+                    <a href="" class="btn btn-warning">Editar</a>
+                    <a href="" class="btn">Eliminar</a>
+                </p>
+
+            </div>
+            <div  class="clearfix"></div>
+        </article>
+    {%endfor%}
+{% endblock %}

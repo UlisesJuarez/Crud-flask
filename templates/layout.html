@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}| Juarez Espinoza Ulises{% endblock %} </title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+    
+    <header>
+        <div id="logotipo">
+            <img src="{{url_for('static',filename='img/flask.png')}}" />
+            <h1>Proyecto con Flask</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="{{url_for('crear_coche')}}">Insertar</a></li>
+            <li><a href="{{url_for('coches')}}">Listado de coches</a></li>
+            <li><a href="{{url_for('contacto')}}">Contacto</a></li>
+            <li><a href="{{url_for('routes.nuevoEstudiante')}}">Insertar estudiante</a></li>
+            <li><a href="{{url_for('routes.listaEstudiantes')}}">Listado estudiantes</a></li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+            <!--Contenido que viene de templates-->
+            <strong>Contenido del bloque original</strong>
+            {% endblock %}
+        </div>
+    </div>
+    <footer>
+        Master en python &copy; Ulises Juárez - {{now.day}}/{{now.month}}/{{now.year}} 
+
+    </footer>
+</body>
+</body>
+</html>

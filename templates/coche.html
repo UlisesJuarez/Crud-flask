@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{coche.1}}
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+    <article class="coche-item">
+        <div class="data">
+            
+            <h1>
+                {{coche.1}}</a>
+                
+            </h1>   
+            <p>{{coche.2}}</p>
+            <p>{{coche.3}}</p>
+            <p>{{coche.4}}</p>
+
+        </div>
+        <div  class="clearfix"></div>
+    </article>
+{% endblock %}
